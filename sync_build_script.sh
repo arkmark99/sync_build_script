@@ -99,7 +99,6 @@ select opt in "${option[@]}"; do
 		echo
 		echo "RENAMEDD name.dependencies.mk"
 		mv device/oppo/CPH1859/${old}.dependencies device/oppo/CPH1859/${new}.dependencies
-		echo
         	
         	echo
    		echo "type launch/build command"
