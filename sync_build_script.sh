@@ -4,7 +4,7 @@ option=("NEW ROM" "EXISTING ROM")
 select opt in "${option[@]}"; do
     case $opt in
         "NEW ROM")
-        	cd /mnt/5724ff01-708b-465a-ac85-2fd8b8320a04/roms/
+		cd /mnt/5724ff01-708b-465a-ac85-2fd8b8320a04/roms/
    		echo "making dir"
    		echo
    		echo "choose Rom NAME"
@@ -39,19 +39,19 @@ select opt in "${option[@]}"; do
    			           break
    			           ;;
    			       "else")
-   			       	   echo "-j value: " 
+   			       	   echo "-j value: "
    			       	   read j
    				   repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$j
   				   break
   				   ;;
   			esac
   		done
-  		
+
   		echo
   		echo "repo sync done"
   		echo
         	
-        	git clone https://github.com/arkmark99/android_device_oppo_CPH1859 -b twelve device/oppo/CPH1859
+		git clone https://github.com/arkmark99/android_device_oppo_CPH1859 -b aosp device/oppo/CPH1859
 		echo
 		echo "device_oppo_CPH1859 done"
 		echo
@@ -132,3 +132,5 @@ select opt in "${option[@]}"; do
 		;;
 	esac
 done
+
+
