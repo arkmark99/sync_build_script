@@ -28,17 +28,21 @@ select opt in "${option[@]}"; do
    			case $jv in
    				"j8")
    				   repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+   				   break
    				   ;;
    			       "j12")
    			           repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j12
+   			           break
    			           ;;
    			       "j16")
    			           repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j16
+   			           break
    			           ;;
    			       "else")
    			       	   echo "-j value: " 
    			       	   read j
    				   repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$j
+  				   break
   				   ;;
   			esac
   		done
@@ -99,6 +103,7 @@ select opt in "${option[@]}"; do
 		echo
 		echo "RENAMEDD name.dependencies.mk"
 		mv device/oppo/CPH1859/${old}.dependencies device/oppo/CPH1859/${new}.dependencies
+		echo
         	
         	echo
    		echo "type launch/build command"
@@ -106,6 +111,7 @@ select opt in "${option[@]}"; do
    		$build
    		echo
 		echo "DONE"
+		break
    		;;
 	"EXISTING ROM")
 		cd /mnt/5724ff01-708b-465a-ac85-2fd8b8320a04/roms/
@@ -122,8 +128,7 @@ select opt in "${option[@]}"; do
    		$build
    		echo
 		echo "DONE"
+		break
 		;;
 	esac
 done
-
-
