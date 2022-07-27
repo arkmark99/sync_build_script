@@ -55,7 +55,7 @@ select opt in "${option[@]}"; do
 		echo
 		echo "device_oppo_CPH1859 done"
 		echo
-		git clone https://github.com/Meghthedev/android_device_realme_mt6771-common device/realme/mt6771
+		git clone https://github.com/Meghthedev/android_device_realme_mt6771-common device/realme/mt6771-common
 		echo
 		echo "android_device_realme_mt6771-common done"
 		echo
