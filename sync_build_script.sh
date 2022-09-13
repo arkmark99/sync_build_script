@@ -51,23 +51,23 @@ select opt in "${option[@]}"; do
   		echo "repo sync done"
   		echo
         	
-		git clone https://github.com/arkmark99/android_device_oppo_CPH1859 -b aosp device/oppo/CPH1859
+		git clone https://github.com/realme-mt6771-devs/android_device_oppo_CPH1859 -b thirteen device/oppo/CPH1859
 		echo
 		echo "device_oppo_CPH1859 done"
 		echo
-		git clone https://github.com/Meghthedev/android_device_realme_mt6771-common device/realme/mt6771-common
+		git clone https://github.com/realme-mt6771-devs/android_device_realme_mt6771-common -b thirteen device/realme/mt6771-common
 		echo
 		echo "android_device_realme_mt6771-common done"
 		echo
-		git clone https://github.com/CorvusRom-Devices/vendor_oppo_CPH1859 -b twelve vendor/oppo/CPH1859
+		git clone https://github.com/realme-mt6771-devs/android_vendor_oppo_CPH1859 -b thirteen vendor/oppo/CPH1859
 		echo
 		echo "vendor_oppo_CPH1859 done"
 		echo
-		git clone https://github.com/CorvusRom-Devices/kernel_realme_mt6771 kernel/realme/mt6771
+		git clone https://github.com/realme-mt6771-devs/android_kernel_realme_mt6771 kernel/realme/mt6771
 		echo
 		echo "kernel_realme_mt6771 done"
 		echo
-		git clone https://github.com/CorvusRom-Devices/device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
+		git clone https://github.com/realme-mt6771-devs/device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
 		echo
 		echo "device_mediatek_sepolicy_vndr done"
 		echo
