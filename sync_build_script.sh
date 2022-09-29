@@ -4,7 +4,10 @@ option=("NEW ROM" "EXISTING ROM")
 select opt in "${option[@]}"; do
     case $opt in
         "NEW ROM")
-		cd /mnt/5724ff01-708b-465a-ac85-2fd8b8320a04/roms/
+        	echo "enter roms dir"
+        	read rdir
+        	echo
+		cd $rdir
    		echo "making dir"
    		echo
    		echo "choose Rom NAME"
@@ -50,24 +53,31 @@ select opt in "${option[@]}"; do
   		echo
   		echo "repo sync done"
   		echo
-        	
-		git clone https://github.com/arkmark99/android_device_oppo_CPH1859 -b aosp device/oppo/CPH1859
+        	echo "enter dt url with -b ****"
+        	read dt
+		git clone $dt device/oppo/CPH1859
 		echo
 		echo "device_oppo_CPH1859 done"
 		echo
-		git clone https://github.com/Meghthedev/android_device_realme_mt6771-common device/realme/mt6771-common
+		echo "enter ct url with -b ****"
+		read ct
+		git clone $ct device/realme/mt6771-common
 		echo
 		echo "android_device_realme_mt6771-common done"
 		echo
-		git clone https://github.com/CorvusRom-Devices/vendor_oppo_CPH1859 -b twelve vendor/oppo/CPH1859
+		echo "enter vt url with -b ****"
+		read vt
+		git clone $vt vendor/oppo/CPH1859
 		echo
 		echo "vendor_oppo_CPH1859 done"
 		echo
-		git clone https://github.com/CorvusRom-Devices/kernel_realme_mt6771 kernel/realme/mt6771
+		echo "enter kernel url with -b ****"
+		read ker
+		git clone $ker kernel/realme/mt6771
 		echo
 		echo "kernel_realme_mt6771 done"
 		echo
-		git clone https://github.com/CorvusRom-Devices/device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
+		git clone https://github.com/realme-mt6771-devs/android_device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
 		echo
 		echo "device_mediatek_sepolicy_vndr done"
 		echo
@@ -82,7 +92,7 @@ select opt in "${option[@]}"; do
 		echo
 		echo "Linear brightness fix done"
 
-		old="aosp"
+		old="lineage"
 
 		echo
 		echo "enter rom name"
@@ -99,11 +109,6 @@ select opt in "${option[@]}"; do
 		echo
 		echo "RENAMEDD name_CPH1859.mk"
 		mv device/oppo/CPH1859/${old}_CPH1859.mk device/oppo/CPH1859/${new}_CPH1859.mk
-
-		echo
-		echo "RENAMEDD name.dependencies.mk"
-		mv device/oppo/CPH1859/${old}.dependencies device/oppo/CPH1859/${new}.dependencies
-		echo
         	
         	echo
    		echo "type launch/build command"
@@ -114,7 +119,9 @@ select opt in "${option[@]}"; do
 		break
    		;;
 	"EXISTING ROM")
-		cd /mnt/5724ff01-708b-465a-ac85-2fd8b8320a04/roms/
+		read rdir
+        	echo
+		cd rdir
    		echo "changing dir"
    		ls
    		echo
@@ -132,5 +139,4 @@ select opt in "${option[@]}"; do
 		;;
 	esac
 done
-
 
