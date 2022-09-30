@@ -15,6 +15,19 @@ select opt in "${option[@]}"; do
    		mkdir $rom
    		echo "dir made"
    		cd $rom
+   		echo "type launch/build command"
+   		read build
+   		echo "enter dt url with -b ****"
+        	read dt
+        	echo
+        	echo "enter ct url with -b ****"
+		read ct
+		echo
+		echo "enter vt url with -b ****"
+		read vt
+		echo
+		echo "enter kernel url with -b ****"
+		read ker
    		echo
    		echo "insert repo url with branch command"
    		read init
@@ -53,26 +66,22 @@ select opt in "${option[@]}"; do
   		echo
   		echo "repo sync done"
   		echo
-        	echo "enter dt url with -b ****"
-        	read dt
+        	
 		git clone $dt device/oppo/CPH1859
 		echo
 		echo "device_oppo_CPH1859 done"
 		echo
-		echo "enter ct url with -b ****"
-		read ct
+		
 		git clone $ct device/realme/mt6771-common
 		echo
 		echo "android_device_realme_mt6771-common done"
 		echo
-		echo "enter vt url with -b ****"
-		read vt
+		
 		git clone $vt vendor/oppo/CPH1859
 		echo
 		echo "vendor_oppo_CPH1859 done"
 		echo
-		echo "enter kernel url with -b ****"
-		read ker
+		
 		git clone $ker kernel/realme/mt6771
 		echo
 		echo "kernel_realme_mt6771 done"
@@ -111,8 +120,6 @@ select opt in "${option[@]}"; do
 		mv device/oppo/CPH1859/${old}_CPH1859.mk device/oppo/CPH1859/${new}_CPH1859.mk
         	
         	echo
-   		echo "type launch/build command"
-   		read build
    		$build
    		echo
 		echo "DONE"
@@ -139,4 +146,5 @@ select opt in "${option[@]}"; do
 		;;
 	esac
 done
+
 
