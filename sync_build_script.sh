@@ -10,13 +10,15 @@ select opt in "${option[@]}"; do
 		cd $rdir
    		echo "making dir"
    		echo
-   		echo "choose Rom NAME"
-   		read rom
-   		mkdir $rom
+   		echo "choose Rom dir NAME"
+   		read romdir
+   		mkdir $romdir
    		echo "dir made"
-   		cd $rom
+   		cd $romdir
    		echo "type launch/build command"
    		read build
+   		echo "enter rom to rename/edit dt"
+		read new
    		echo "enter dt url with -b ****"
         	read dt
         	echo
@@ -104,8 +106,7 @@ select opt in "${option[@]}"; do
 		old="lineage"
 
 		echo
-		echo "enter rom name"
-		read new
+		
 
 		echo
 		echo "EDITED AndroidProducts.mk"
@@ -118,7 +119,7 @@ select opt in "${option[@]}"; do
 		echo
 		echo "RENAMEDD name_CPH1859.mk"
 		mv device/oppo/CPH1859/${old}_CPH1859.mk device/oppo/CPH1859/${new}_CPH1859.mk
-        	
+        	. build/envsetup.sh
         	echo
    		$build
    		echo
@@ -146,5 +147,4 @@ select opt in "${option[@]}"; do
 		;;
 	esac
 done
-
 
